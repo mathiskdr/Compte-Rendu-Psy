@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Compte rendu d’entretien psychiatrique</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Source+Serif+4:wght@400;600&display=swap">
+<style>
+:root{--paper:#E6ECEF;--sheet:#FBFCFC;--ink:#1B2733;--mute:#566673;--line:#B4C1CA;--accent:#1F4E79;--stamp:#A4262C;--field:#EEF3F6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0F151A;--sheet:#182029;--ink:#E3EAEE;--mute:#93A3AF;--line:#33424D;--accent:#7FB2DE;--stamp:#E27A80;--field:#1F2A34;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0F151A;--sheet:#182029;--ink:#E3EAEE;--mute:#93A3AF;--line:#33424D;--accent:#7FB2DE;--stamp:#E27A80;--field:#1F2A34;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 "Source Serif 4",Georgia,serif}
+.wrap{max-width:860px;margin:0 auto;padding:20px 14px 60px}
+.sheet{background:var(--sheet);border:1px solid var(--line);padding:28px 26px;position:relative}
+header{display:flex;justify-content:space-between;gap:16px;border-bottom:3px double var(--ink);padding-bottom:14px;margin-bottom:18px;flex-wrap:wrap}
+header .org{font:600 13px/1.4 Archivo,Arial,sans-serif;color:var(--mute)}
+header input.etab{font:600 18px Archivo,Arial,sans-serif;border:0;border-bottom:1px dashed var(--line);background:transparent;color:var(--ink);width:100%;min-width:240px;padding:2px 0}
+h1{font:600 24px/1.2 "Source Serif 4",Georgia,serif;margin:14px 0 0}
+.stamp{border:3px solid var(--stamp);color:var(--stamp);font:600 13px/1.3 Archivo,Arial,sans-serif;padding:6px 10px;transform:rotate(-4deg);align-self:flex-start;text-align:center}
+fieldset{border:0;border-top:1px solid var(--line);margin:0;padding:16px 0 6px}
+legend{font:600 15px Archivo,Arial,sans-serif;color:var(--accent);padding-right:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 16px}
+label.f{display:flex;flex-direction:column;font:400 13px Archivo,Arial,sans-serif;color:var(--mute);gap:3px}
+input[type=text],input[type=date],input[type=time],select,textarea{font:400 15px "Source Serif 4",Georgia,serif;color:var(--ink);background:var(--field);border:1px solid var(--line);border-radius:2px;padding:7px 9px;width:100%}
+textarea{min-height:96px;resize:vertical;line-height:1.5}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.checks{display:flex;flex-wrap:wrap;gap:6px 18px;margin:4px 0 10px}
+.checks label{font:400 14px Archivo,Arial,sans-serif;display:flex;gap:6px;align-items:center;color:var(--ink)}
+.gl{font:400 13px Archivo,Arial,sans-serif;color:var(--mute);margin:12px 0 0}
+.risk{display:grid;grid-template-columns:minmax(120px,190px) 1fr 88px;gap:10px;align-items:center;margin:8px 0;font:400 14px Archivo,Arial,sans-serif}
+.risk output{font-weight:600;text-align:right}
+.risk input[type=range]{width:100%;accent-color:var(--accent)}
+.r0{color:var(--mute)}.r1{color:var(--accent)}.r2{color:#9A6A00}.r3{color:#C0501A}.r4{color:var(--stamp)}
+.bar{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
+button{font:600 14px Archivo,Arial,sans-serif;padding:10px 16px;border:1px solid var(--accent);background:var(--accent);color:var(--sheet);border-radius:2px;cursor:pointer}
+button.alt{background:transparent;color:var(--accent)}
+button.del{background:transparent;color:var(--stamp);border-color:var(--stamp)}
+.out{margin-top:20px;display:none}
+.out pre{white-space:pre-wrap;word-break:break-word;font:400 14px/1.55 "Source Serif 4",Georgia,serif;background:var(--field);border:1px solid var(--line);padding:14px;margin:8px 0 0;max-height:420px;overflow:auto}
+.note{font:400 12px Archivo,Arial,sans-serif;color:var(--mute);margin-top:18px}
+#msg{font:400 13px Archivo,Arial,sans-serif;color:var(--accent);align-self:center}
+@media (max-width:560px){.sheet{padding:18px 14px}.risk{grid-template-columns:1fr 70px}.risk input{grid-column:1/-1;grid-row:2}}
+@media print{body{background:#fff;color:#000}.bar,.out,.note{display:none}.sheet{border:0;padding:0}input,select,textarea{border:0;background:transparent;color:#000}}
+</style>
+</head>
+<body>
+<div class="wrap"><form class="sheet" id="doc" onsubmit="return false">
+<header>
+  <div style="flex:1;min-width:240px">
+    <div class="org">Administration pénitentiaire · Unité sanitaire</div>
+    <input class="etab" type="text" data-k="etab" data-l="Établissement" value="Centre pénitentiaire" aria-label="Établissement">
+    <h1>Compte rendu d’entretien psychiatrique</h1>
+  </div>
+  <div class="stamp">CONFIDENTIEL<br>SECRET MÉDICAL</div>
+</header>
+
+<fieldset><legend>Identification</legend>
+<div class="grid">
+  <label class="f">Nom et prénom du détenu<input type="text" data-k="nom" data-l="Détenu"></label>
+  <label class="f">Numéro d’écrou<input type="text" data-k="ecrou" data-l="N° d’écrou"></label>
+  <label class="f">Quartier / cellule<input type="text" data-k="cell" data-l="Quartier / cellule"></label>
+  <label class="f">Date de l’entretien<input type="date" data-k="date" data-l="Date"></label>
+  <label class="f">Heure<input type="time" data-k="heure" data-l="Heure"></label>
+  <label class="f">Praticien<input type="text" data-k="psy" data-l="Praticien"></label>
+  <label class="f">Lieu
+    <select data-k="lieu" data-l="Lieu"><option>Cabinet médical</option><option>Infirmerie</option><option>Cellule</option><option>Quartier disciplinaire</option><option>Parloir</option></select></label>
+  <label class="f">Nature de l’entretien
+    <select data-k="type" data-l="Nature"><option>Premier entretien</option><option>Suivi</option><option>Demande du détenu</option><option>Sur signalement</option><option>Urgence</option></select></label>
+</div></fieldset>
+
+<fieldset><legend>Motif</legend>
+<textarea data-k="motif" data-l="Motif de l’entretien" placeholder="Pourquoi cet entretien a-t-il lieu ? Qui l’a demandé ?"></textarea>
+</fieldset>
+
+<fieldset><legend>Examen clinique</legend>
+<div class="grid">
+  <label class="f">Présentation
+    <select data-k="pres" data-l="Présentation"><option>Soignée</option><option>Négligée</option><option>Excentrique</option><option>Tenue inadaptée</option></select></label>
+  <label class="f">Contact
+    <select data-k="contact" data-l="Contact"><option>Bon</option><option>Méfiant</option><option>Hostile</option><option>Fuyant</option><option>Familier</option></select></label>
+  <label class="f">Discours
+    <select data-k="disc" data-l="Discours"><option>Normal</option><option>Ralenti</option><option>Accéléré</option><option>Pauvre</option><option>Désorganisé</option></select></label>
+  <label class="f">Humeur
+    <select data-k="humeur" data-l="Humeur"><option>Stable</option><option>Triste</option><option>Anxieuse</option><option>Irritable</option><option>Exaltée</option><option>Émoussée</option></select></label>
+  <label class="f">Pensée
+    <select data-k="pensee" data-l="Pensée"><option>Cohérente</option><option>Idées de persécution</option><option>Idées de grandeur</option><option>Hallucinations rapportées</option><option>Obsessionnelle</option></select></label>
+  <label class="f">Sommeil
+    <select data-k="som" data-l="Sommeil"><option>Correct</option><option>Insomnie</option><option>Cauchemars</option><option>Hypersomnie</option></select></label>
+  <label class="f">Appétit
+    <select data-k="app" data-l="Appétit"><option>Correct</option><option>Diminué</option><option>Augmenté</option><option>Refus de s’alimenter</option></select></label>
+</div>
+<div class="gl">Orientation</div>
+<div class="checks" data-gl="Orientation"><label><input type="checkbox" checked> Temps</label><label><input type="checkbox" checked> Espace</label><label><input type="checkbox" checked> Personne</label></div>
+</fieldset>
+
+<fieldset><legend>Évaluation des risques</legend>
+<div class="risk"><span>Risque suicidaire</span><input type="range" min="0" max="4" value="0" data-k="r1" data-l="Risque suicidaire" data-r><output></output></div>
+<div class="risk"><span>Hétéro-agressivité</span><input type="range" min="0" max="4" value="0" data-k="r2" data-l="Hétéro-agressivité" data-r><output></output></div>
+<div class="risk"><span>Auto-agressivité</span><input type="range" min="0" max="4" value="0" data-k="r3" data-l="Auto-agressivité" data-r><output></output></div>
+<div class="risk"><span>Risque de décompensation</span><input type="range" min="0" max="4" value="0" data-k="r4" data-l="Risque de décompensation" data-r><output></output></div>
+</fieldset>
+
+<fieldset><legend>Observations</legend>
+<textarea data-k="obs" data-l="Observations cliniques" style="min-height:150px" placeholder="Déroulé de l’entretien, propos rapportés, comportement, éléments marquants…"></textarea>
+</fieldset>
+
+<fieldset><legend>Conclusion et conduite à tenir</legend>
+<div class="checks" data-gl="Conduite à tenir">
+  <label><input type="checkbox"> Suivi hebdomadaire</label>
+  <label><input type="checkbox"> Traitement médicamenteux</label>
+  <label><input type="checkbox"> Surveillance renforcée</label>
+  <label><input type="checkbox"> Changement de cellule</label>
+  <label><input type="checkbox"> Hospitalisation (UHSA)</label>
+  <label><input type="checkbox"> Aucune action</label>
+</div>
+<textarea data-k="concl" data-l="Conclusion" placeholder="Conclusion et recommandations au service pénitentiaire…"></textarea>
+<div class="grid" style="margin-top:12px">
+  <label class="f">Prochain entretien<input type="date" data-k="next" data-l="Prochain entretien"></label>
+  <label class="f">Signature du praticien<input type="text" data-k="sign" data-l="Signature"></label>
+</div>
+</fieldset>
+
+<div class="bar">
+  <button type="button" id="gen">Générer le compte rendu</button>
+  <button type="button" class="alt" id="print">Imprimer</button>
+  <button type="button" class="del" id="reset">Réinitialiser</button>
+  <span id="msg" role="status"></span>
+</div>
+<div class="out" id="out">
+  <button type="button" class="alt" id="copy">Copier le texte</button>
+  <pre id="txt"></pre>
+</div>
+<p class="note">Document de fiction destiné au jeu de rôle. Les brouillons restent sur cet appareil.</p>
+</form></div>
+
+<script>
+(function(){
+var LV=["Nul","Faible","Modéré","Élevé","Critique"];
+var form=document.getElementById("doc"),msg=document.getElementById("msg");
+var fields=[].slice.call(form.querySelectorAll("[data-k]"));
+var checks=[].slice.call(form.querySelectorAll("input[type=checkbox]"));
+var KEY="rp-cr-psy-v1";
+function say(t){msg.textContent=t;setTimeout(function(){msg.textContent=""},2500)}
+function paintRisk(el){var o=el.parentNode.querySelector("output"),v=+el.value;o.textContent=LV[v];o.className="r"+v}
+function save(){try{var d={f:fields.map(function(e){return e.value}),c:checks.map(function(e){return e.checked})};localStorage.setItem(KEY,JSON.stringify(d))}catch(e){}}
+function load(){try{var d=JSON.parse(localStorage.getItem(KEY)||"null");if(!d)return;fields.forEach(function(e,i){if(d.f[i]!==undefined)e.value=d.f[i]});checks.forEach(function(e,i){if(d.c[i]!==undefined)e.checked=d.c[i]})}catch(e){}}
+function fmtDate(v){if(!v)return"—";var p=v.split("-");return p[2]+"/"+p[1]+"/"+p[0]}
+function build(){
+  var g=function(k){var e=form.querySelector("[data-k="+k+"]");return e?e.value.trim():""};
+  var d=function(k){return fmtDate(g(k))};
+  var grp=function(label){var box=form.querySelector("[data-gl=\""+label+"\"]");var a=[].slice.call(box.querySelectorAll("input:checked")).map(function(i){return i.parentNode.textContent.trim()});return a.length?a.join(", "):"—"};
+  var L=[];
+  L.push((g("etab")||"ÉTABLISSEMENT PÉNITENTIAIRE").toUpperCase());
+  L.push("COMPTE RENDU D’ENTRETIEN PSYCHIATRIQUE — CONFIDENTIEL, SECRET MÉDICAL");
+  L.push("");
+  L.push("Détenu : "+(g("nom")||"—")+" (écrou n° "+(g("ecrou")||"—")+")");
+  L.push("Quartier / cellule : "+(g("cell")||"—"));
+  L.push("Date : "+d("date")+(g("heure")?" à "+g("heure"):"")+" · Lieu : "+g("lieu"));
+  L.push("Praticien : "+(g("psy")||"—")+" · Nature : "+g("type"));
+  L.push("");
+  L.push("MOTIF\n"+(g("motif")||"—"));
+  L.push("");
+  L.push("EXAMEN CLINIQUE");
+  L.push("Présentation : "+g("pres")+" · Contact : "+g("contact"));
+  L.push("Discours : "+g("disc")+" · Humeur : "+g("humeur"));
+  L.push("Pensée : "+g("pensee"));
+  L.push("Sommeil : "+g("som")+" · Appétit : "+g("app"));
+  L.push("Orientation : "+grp("Orientation"));
+  L.push("");
+  L.push("ÉVALUATION DES RISQUES");
+  ["r1","r2","r3","r4"].forEach(function(k){var e=form.querySelector("[data-k="+k+"]");L.push(e.getAttribute("data-l")+" : "+LV[+e.value])});
+  L.push("");
+  L.push("OBSERVATIONS\n"+(g("obs")||"—"));
+  L.push("");
+  L.push("CONCLUSION\n"+(g("concl")||"—"));
+  L.push("Conduite à tenir : "+grp("Conduite à tenir"));
+  L.push("Prochain entretien : "+d("next"));
+  L.push("");
+  L.push("Signature : "+(g("sign")||"—"));
+  return L.join("\n");
+}
+fields.forEach(function(e){if(e.hasAttribute("data-r"))paintRisk(e)});
+load();
+fields.forEach(function(e){if(e.hasAttribute("data-r"))paintRisk(e)});
+form.addEventListener("input",function(ev){if(ev.target.hasAttribute&&ev.target.hasAttribute("data-r"))paintRisk(ev.target);save()});
+form.addEventListener("change",save);
+document.getElementById("gen").onclick=function(){document.getElementById("txt").textContent=build();var o=document.getElementById("out");o.style.display="block";o.scrollIntoView({behavior:"smooth",block:"nearest"})};
+document.getElementById("copy").onclick=function(){var t=document.getElementById("txt").textContent;
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){say("Texte copié")},function(){fallback(t)})}else{fallback(t)}};
+function fallback(t){var r=document.createRange();r.selectNodeContents(document.getElementById("txt"));var s=window.getSelection();s.removeAllRanges();s.addRange(r);say("Texte sélectionné : copiez-le à la main")}
+document.getElementById("print").onclick=function(){window.print()};
+document.getElementById("reset").onclick=function(){
+  if(!window.confirm("Effacer tout le compte rendu ?"))return;
+  try{localStorage.removeItem(KEY)}catch(e){}
+  form.reset();fields.forEach(function(e){if(e.hasAttribute("data-r"))paintRisk(e)});
+  document.getElementById("out").style.display="none";say("Compte rendu effacé")};
+})();
+</script>
+</body>
+</html>
